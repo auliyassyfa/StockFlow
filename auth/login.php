@@ -210,6 +210,43 @@ if (isset($_SESSION['user_id'])) {
             gap: 8px;
         }
 
+        /* Success */
+        .success-box {
+            background: #d1fae5;
+            border: 1px solid #a7f3d0;
+            border-left: 3px solid #10b981;
+            border-radius: 8px;
+            padding: 11px 14px;
+            color: #065f46;
+            font-size: 0.85rem;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Switch auth */
+        .switch-auth {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid #f1f5f9;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        .switch-auth a {
+            color: #6c63ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.15s ease;
+        }
+
+        .switch-auth a:hover {
+            color: #8b5cf6;
+            text-decoration: underline;
+        }
+
         /* Footer */
         .login-footer {
             text-align: center;
@@ -236,6 +273,13 @@ if (isset($_SESSION['user_id'])) {
 
     <!-- Card -->
     <div class="login-card">
+
+        <?php if(isset($_GET['registered'])) : ?>
+        <div class="success-box">
+            <i class="bi bi-check-circle-fill"></i>
+            Registrasi berhasil! Silakan masuk dengan akun Anda.
+        </div>
+        <?php endif; ?>
 
         <?php if(isset($_GET['error'])) : ?>
         <div class="error-box">
@@ -281,6 +325,11 @@ if (isset($_SESSION['user_id'])) {
                 <i class="bi bi-box-arrow-in-right"></i>
                 Masuk ke Sistem
             </button>
+
+            <!-- Tautan ke Register -->
+            <div class="switch-auth">
+                Belum memiliki akun? <a href="register.php">Daftar sekarang</a>
+            </div>
 
         </form>
 

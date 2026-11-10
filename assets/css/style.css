@@ -56,9 +56,10 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; opacity: 0.6; }
 
 /* ── Layout ── */
-.d-flex {
+.app-layout {
     display: flex;
     min-height: 100vh;
+    width: 100%;
 }
 
 /* ══════════════════════════════════════════════
@@ -174,9 +175,11 @@ body {
 ══════════════════════════════════════════════ */
 .main-content {
     flex-grow: 1;
+    min-width: 0;
+    width: calc(100% - var(--sidebar-width));
     background: var(--bg-primary);
     min-height: 100vh;
-    padding: 28px 32px !important;
+    padding: 24px 28px !important;
 }
 
 .main-content h2 {
@@ -405,7 +408,7 @@ body {
     margin-bottom: 6px;
 }
 
-.main-content form { max-width: 800px; }
+.main-content form:not(.row) { max-width: 800px; }
 
 /* ══════════════════════════════════════════════
    BUTTONS
@@ -414,12 +417,16 @@ body {
     border-radius: var(--radius-sm) !important;
     font-weight: 600 !important;
     font-size: 0.85rem !important;
-    padding: 9px 18px !important;
+    padding: 8px 16px !important;
     transition: var(--transition) !important;
     letter-spacing: 0.01em;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
+    white-space: nowrap;
+    height: fit-content;
+    line-height: 1.4;
 }
 
 .btn-primary {

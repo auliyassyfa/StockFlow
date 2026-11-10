@@ -129,7 +129,7 @@ include '../../templates/sidebar.php';
     <div class="card shadow">
 
         <div class="card-header">
-            <h4>Barang Masuk</h4>
+            <h4>Barang Keluar</h4>
         </div>
 
         <div class="card-body">

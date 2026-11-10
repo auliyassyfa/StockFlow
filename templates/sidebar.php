@@ -6,7 +6,7 @@ function isActive($pattern) {
     return strpos($current_script, $pattern) !== false ? 'active' : '';
 }
 ?>
-<div class="d-flex">
+<div class="app-layout">
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -60,6 +60,14 @@ function isActive($pattern) {
                    class="nav-link <?= isActive('/modules/transaksi/riwayat_transaksi.php') ?>">
                     <i class="bi bi-clock-history"></i>
                     Riwayat Transaksi
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?= $pathToRoot; ?>modules/stok_opname/index.php"
+                   class="nav-link <?= isActive('/modules/stok_opname/') ?>">
+                    <i class="bi bi-clipboard-check"></i>
+                    Stok Opname
                 </a>
             </li>
 
